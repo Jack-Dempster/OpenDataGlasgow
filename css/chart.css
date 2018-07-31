@@ -1,0 +1,45 @@
+  #container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    color: #696969;
+    font-weight: 300;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    padding: 1.25rem;
+    }
+  
+  .charts{
+    display: flex;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    list-style: none;
+    flex-direction: row;
+    margin: -10px 0 0 0;
+    margin: 10px;
+    justify-content: space-between;
+  }
+  .chart{
+    display: flex;
+    background: #fefff9;
+    margin-top: 10px;
+    color: #363636;
+    border: #363636;
+    border-radius: 0.25rem;
+    /*box-shadow: 10px 10px 5px 0 rgba(230,230,230,1);*/
+    box-shadow: 10px 10px 5px 0 rgba(230,230,230,1);
+    
+    
+  }
+
+  .chart:hover{
+    background: white;
+    -moz-box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
+    
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
+   
+  }
