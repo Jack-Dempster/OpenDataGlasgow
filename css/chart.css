@@ -21,6 +21,7 @@
     margin: -10px 0 0 0;
     margin: 10px;
     justify-content: space-between;
+    padding-bottom: 50px;
   }
   .chart{
     display: flex;
@@ -31,8 +32,6 @@
     border-radius: 0.25rem;
     /*box-shadow: 10px 10px 5px 0 rgba(230,230,230,1);*/
     box-shadow: 10px 10px 5px 0 rgba(230,230,230,1);
-    
-    
   }
 
   .chart:hover{

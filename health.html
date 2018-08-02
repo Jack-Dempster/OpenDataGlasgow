@@ -5,10 +5,12 @@
     <title>Glasgow Dashboard</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/chart.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="/js/healthChart.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -36,21 +38,250 @@
             <img src="/img/glasgow_sky.jpg" width="100%">
         </div>
         <div id="content">
-            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
-                to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-                typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
-                including versions of Lorem Ipsum.</p>
+            <p> Shown below are health statistics and graphs invloving Glasgow. They illustrate some of the key problems that
+                Glasgow faces in regard to the general health of the population. Clicking on each graph will provide additional
+                information along with analysis of each display. The source of the data is also listed if you wish to find
+                out more information on the topic.</p>
+
+            <ul id="smokeQuitModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h1> Smoking Quit Rates </h1>
+                    </div>
+                    <div class="modal-body">
+                        <b> About </b>
+                        <br>
+                        <p>The number of people setting a quit date (with an NHS Stop-Smoking Service) and the number who successfully
+                            quit at the 4 week follow-up. Rates are successful quitters per 100,000 aged 16+. </p>
+                        <br>
+                        <b> Analysis</b>
+                        <br>
+                        <p>The rate of successful smoking quitters has fallen over the last 5 years by 5% in London and 17%
+                            nationally. The quit rate in London has also decreased over the last year by 13%, whilst also
+                            falling nationally by 20% (data shown is for quarter 3 of each financial year). The London quit
+                            rates are still below the national average (3% lower in Q2 2013/14), though the gap is closing.
+                            The GLA has supported improved training for more than 800 stop smoking service practitionersin
+                            Londonto increase the quit rate of smokers.Further training courses to support an additional
+                            100-200 practitioners have been coming online since early 2013. 19% of adults in London currently
+                            smoke, compared with 21% in the UK.</p>
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                        <b> Source :</b>
+                        <a href="https://data.london.gov.uk/dataset/smoking-indicators-borough"> /Smoking Quit Rates</a>
+                    </div>
+                </div>
+            </ul>
+            <ul id="smokeDeathModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h1> Smoking Related Deaths </h1>
+                    </div>
+                    <div class="modal-body">
+                        <b> About </b>
+                        <br>
+                        <p>The number of smoking related deaths within the NHS. Direct age-sex standardised rates for persons
+                            ages 35+. Causes of death considered to be realated to smoking are: various cancers, cardiovascular
+                            and respiratory diseases, and diseases of the digestive system.</p>
+                        <br>
+                        <b> Analysis </b>
+                        <br>
+                        <p> Smoking related deaths within Scotland have decreased over the monitored time period. Almost a 50%
+                            decrease in smoking related deaths. Can be compared to the amount of smoking quitters over the
+                            last decade to prove that less people are smoking than before. Also coincides with the 2006 indoor
+                            smoking ban which may have encouraged people to quit and therefore less smoking related deaths.</p>
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                        <b> Source :</b>
+                        <a href="https://data.london.gov.uk/dataset/smoking-indicators-borough"> /Smoking Death Rates</a>
+                    </div>
+                </div>
+            </ul>
+            <ul id="lifeExpModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h1> Life Expectancy at Birth </h1>
+                    </div>
+                    <div class="modal-body">
+                        <b> About</b>
+                        <br>
+                        <p>Period life expectancy at a given age for an area is the average number of years a person would live,
+                            if he or she experienced the particular areaÕs age-specific mortality rates for that time period
+                            throughout his or her life. Several studies have shown that geographical variations in life expectancy
+                            can largely be accounted for by individual and area based deprivation or disadvantage. Life expectancy
+                            figures are widely used by local health planners in monitoring health inequalities and in targeting
+                            resources to tackle these inequalities in the most effective manner.
+                        </p>
+                        <br>
+                        <b> Analysis </b>
+                        <br>
+                        <p>Life expectancy at birth and at age 65 increased at a faster pace in London, compared with most other
+                            regions between 2007-09 and 2011-13. In 2011-13, life expectancy at birth was highest in the
+                            South East (80.4 years) for males and in London for females (84.1 years). In 2011-13 the gender
+                            inequality in life expectancy was greatest in London (4.1 years). Nevertheless, these gaps are
+                            narrower than they were in 2007-09. </p>
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                        <b> Source :</b>
+                        <a href="https://data.london.gov.uk/dataset/life-expectancy-birth-and-age-65-borough"> /Life Expectancy at Birth</a>
+                    </div>
+                </div>
+            </ul>
+            <ul id="beingModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h1> General Health </h1>
+                    </div>
+                    <div class="modal-body">
+                        <b> About</b>
+                        <br>
+                        <p>Data shows General Health of residents in the Glasgow Data Zones during the 2011 census. General
+                            health is a self-assessment of an individual's state of health. People were required to rate
+                            their state of health as very good, good, fair, bad or very bad using the census questionnaire.
+                        </p>
+                        <br>
+                        <b> Analysis </b>
+                        <br>
+                        <p> Taken from the 2011 census this chart shows the general well-being and health of the residents of
+                            Glasgow. Overall shows that about half of the population consider themselves to be in good health.
+                            And the various categories show that others view themselves in poorer or very bad health. This
+                            data gives an understnading of the general publics feelings on their health and well-being but
+                            does not necessarily reflect how health the population is overall. </p>
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                            <b> Source :</b>
+                            <a href="https://data.glasgow.gov.uk/dataset/general-health"> /General Health Glasgow</a>
+                    </div>
+                </div>
+            </ul>
+            <ul id="bikeModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h1> Modal Header </h1>
+                    </div>
+                    <div class="modal-body">
+                        <b> Model Content Header</b>
+                        <br>
+                        <p>Some text in the Modal..</p>
+                        <br>
+                        <b> Second Content Header</b>
+                        <br>
+                        <p>Some more analyis</p>
+                    </div>
+                    <div class="modal-footer">
+                        <p> Source :</p>
+                    </div>
+                </div>
+            </ul>
+            <ul id="coronModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h1> Early Deaths from Coronoary Heart Disease. </h1>
+                    </div>
+                    <div class="modal-body">
+                        <b> About </b>
+                        <br>
+                        <p> Deaths from early coronary heart disease for persons aged under 75. Time period is from 1997-2008
+                            for Glasgow and Scotland. The statisticws are a 3-year total number and 3-year average directly
+                            age-sex standardised rate per 100.000 population per year.</p>
+                        <br>
+                        <b> Analysis</b>
+                        <br>
+                        <p> Over time the overall amount of deaths from Coronary Heart Disease has dropped dramatically with
+                            almost a 60% decrease over the time period shown. Glasgow has an overall higher rate of death
+                            from Coronary Heart Disease than the rest of Scotland. More investigations could be undertaken
+                            to try and understand why this is the case. Could be due to the large population skewing some
+                            numbers or the fact that Glasgow is typically viewed as an unhealthy city overall. </p>
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                            <b> Source :</b>
+                            <a href="https://data.glasgow.gov.uk/dataset/early-deaths-from-coronary-heart-disease"> /Coronary Heart Disease</a>
+                    </div>
+                </div>
+            </ul>
+            <ul id="cancerModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h1> Early Deaths from Cancer </h1>
+                    </div>
+                    <div class="modal-body">
+                        <b> About </b>
+                        <br>
+                        <p>Deaths from early cancer (those under 75 years). Time period is 1997-2008 for Intermediate Geographies
+                            in Glasgow. A Scotland wide value is also provided for comparison. The statistics are 3-year
+                            total number and 3-year average directly age-sex standardised rate per 100,000 population per
+                            year.
+                        </p>
+                        <br>
+                        <b> Analysis </b>
+                        <br>
+                        <p>Over time the overall amount of deaths from Coronary Heart Disease has dropped dramatically with
+                            almost a 60% decrease over the time period shown. Glasgow has an overall higher rate of death
+                            from Coronary Heart Disease than the rest of Scotland. More investigations could be undertaken
+                            to try and understand why this is the case. Could be due to the large population skewing some
+                            numbers or the fact that Glasgow is typically viewed as an unhealthy city overall.</p>
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                            <b> Source :</b>
+                            <a href="https://data.glasgow.gov.uk/dataset/early-deaths-from-cancer-75s"> /Early Cancer Deaths</a>
+                    </div>
+                </div>
+            </ul>
+            <ul id="cerebModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h1> Early Deaths from Cerebrovascular </h1>
+                    </div>
+                    <div class="modal-body">
+                        <b> About </b>
+                        <br>
+                        <p>Deaths from early cerebrovascular disease (for those under 75 years). Time period is 1997-2008 for
+                            Intermediate Geographies in Glasgow. A Scotland wide value is also provided for comparison. The
+                            statistics are; 3-year total number and 3-year average directly age-sex standardised rate per
+                            100,000 population per 100,000</p>
+                        <br>
+                        <b> Analysis </b>
+                        <br>
+                        <p>Over time the overall amount of deaths from Coronary Heart Disease has dropped dramatically with
+                            almost a 60% decrease over the time period shown. Glasgow has an overall higher rate of death
+                            from Coronary Heart Disease than the rest of Scotland. More investigations could be undertaken
+                            to try and understand why this is the case. Could be due to the large population skewing some
+                            numbers or the fact that Glasgow is typically viewed as an unhealthy city overall.</p>
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                            <b> Source :</b>
+                            <a href="https://data.glasgow.gov.uk/dataset/early-deaths-from-cerebrovascular-disease-75s"> /Early Cerebrovascular Deaths</a>
+                    </div>
+                </div>
+            </ul>
         </div>
         <ul class="charts">
             <li id="smokeChart" class="chart" style="width: 48%; height: 400px"></li>
             <li id="smokeDeath" class="chart" style="width: 48%; height: 400px"></li>
             <li id="lifeExpctChart" class="chart" style="width: 48%; height: 400px"></li>
+            <li id="beingChart" class="chart" style="width: 48%; height: 400px"></li>
             <li id="bikeChart" class="chart" style="width: 48%; height: 400px"></li>
+            <li id="coronChart" class="chart" style="width: 48%; height: 400px"></li>
+            <li id="cancerChart" class="chart" style="width: 48%; height: 400px"></li>
+            <li id="cerebChart" class="chart" style="width: 48%; height: 400px"></li>
 
         </ul>
     </div>
+    <script type="text/javascript" src="/js/healthChart.js"></script>
 </body>
 
 </html>
