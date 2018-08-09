@@ -1,0 +1,34 @@
+{
+  "Sheet1": {
+    "2008-09": {
+      "Period": "2008-09",
+      "Glasgow": 462,
+      "Scotland": 496.7
+    },
+    "2009-10": {
+      "Period": "2009-10",
+      "Glasgow": 484,
+      "Scotland": 567
+    },
+    "2010-11": {
+      "Period": "2010-11",
+      "Glasgow": 522.5,
+      "Scotland": 583.5
+    },
+    "2011-12": {
+      "Period": "2011-12",
+      "Glasgow": 539.4,
+      "Scotland": 623.5
+    },
+    "2012-13": {
+      "Period": "2012-13",
+      "Glasgow": 527.2,
+      "Scotland": 587.7
+    },
+    "2013-14": {
+      "Period": "2013-14",
+      "Glasgow": 458,
+      "Scotland": 470.2
+    }
+  }
+}

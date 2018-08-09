@@ -26,10 +26,10 @@ window.onclick = function(event) {
 
 //Draw Smoking Quitter chart
 function drawSmokeChart() {
-    //var queryString = encodeURIComponent('SELECT A, B, C');
+    var queryString = encodeURIComponent('SELECT A, B, C');
 
     var query = new google.visualization.Query(
-        'https://docs.google.com/spreadsheets/d/1RyQRNvvBkOfavFAVKFkfGjAxpJcTLttdKm270winifs/edit?usp=sharing');
+        'https://docs.google.com/spreadsheets/d/1RyQRNvvBkOfavFAVKFkfGjAxpJcTLttdKm270winifs/edit?usp=sharing + queryString');
     query.send(handleQueryResponse);
 
     function handleQueryResponse(response) {

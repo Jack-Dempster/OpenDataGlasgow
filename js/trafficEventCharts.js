@@ -2,6 +2,21 @@ google.charts.load('current', { 'packages': ['line'] });
 google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(drawSev1Chart);
 
+// Get the modal
+var modal = document.getElementById('');
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.visibility = "hidden";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style. visibility = "hidden";
+    }
+}
+
 function drawSev1Chart() {
 
     var query = new google.visualization.Query(
@@ -36,5 +51,9 @@ function drawSev1Chart() {
         var data = response.getDataTable();
         var chart = new google.visualization.ColumnChart(document.getElementById('sev1Chart'));
         chart.draw(data, google.charts.Line.convertOptions(options));
+        google.visualization.events.addListener(chart, 'click', function(){
+            modal=document.getElementById('smokeQuitModal');
+            modal.style.visibility = "visible";
+        })
     }
 }

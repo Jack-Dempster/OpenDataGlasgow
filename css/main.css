@@ -11,6 +11,11 @@ html, body {
 	height: 100%;
 }
 
+#text-box {
+	background-color: white;
+	margin: auto;
+}
+
 #wrapper {	
 	background-color: rgb(233, 233, 233);
 	width: 65%;
@@ -83,12 +88,11 @@ a {
 	margin: auto;
 	color: #696969;
 	font-weight: 300;
-	font-size: 0.875rem;
+	font-size: 1rem;
 	line-height: 1.5;
 	margin-bottom: 1.25rem;
 	padding: 1.25rem;
 	}
-
 
 /* ================================= 
   Media Queries
