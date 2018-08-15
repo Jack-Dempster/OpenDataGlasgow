@@ -52,7 +52,7 @@ function drawSev1Chart() {
         var chart = new google.visualization.ColumnChart(document.getElementById('sev1Chart'));
         chart.draw(data, google.charts.Line.convertOptions(options));
         google.visualization.events.addListener(chart, 'click', function(){
-            modal=document.getElementById('smokeQuitModal');
+            modal=document.getElementById('trafficModal');
             modal.style.visibility = "visible";
         })
     }
