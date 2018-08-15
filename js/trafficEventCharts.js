@@ -1,21 +1,9 @@
 google.charts.load('current', { 'packages': ['line'] });
 google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(drawSev1Chart);
+google.charts.setOnLoadCallback(drawCasualtyChart);
 
-// Get the modal
-var modal = document.getElementById('');
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.visibility = "hidden";
-}
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style. visibility = "hidden";
-    }
-}
+
 
 function drawSev1Chart() {
 
@@ -51,9 +39,42 @@ function drawSev1Chart() {
         var data = response.getDataTable();
         var chart = new google.visualization.ColumnChart(document.getElementById('sev1Chart'));
         chart.draw(data, google.charts.Line.convertOptions(options));
-        google.visualization.events.addListener(chart, 'click', function(){
-            modal=document.getElementById('trafficModal');
-            modal.style.visibility = "visible";
-        })
+    }
+}
+
+function drawCasualtyChart() {
+
+    var query = new google.visualization.Query(
+        'https://docs.google.com/spreadsheets/d/1fGUKOB-izEP2MKsGHv3tQHjScyTLiiNb1PdLHfC5FKc/edit?usp=sharing');
+
+    //query.setQuery("select AE, count(F) where F=1 group by AE label count(F) 'Severity 1 Accidents'");
+    query.send(handleQueryResponse);
+
+    function handleQueryResponse(response) {
+        if (response.isError()) {
+            alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+            return;
+        }
+
+        var options = {
+            title: 'Casualties in road accidents',
+            vAxis: { title: '' },
+            hAxis: { title: '' },
+            legend: { position: "none" },
+            animation: {
+                "startup": true,
+                duration: 1000,
+                easing: "out"
+            },
+            explorer: {
+                actions: ['dragToZoom', 'rightClickToReset'],
+                maxZoomIn: 0.5,
+                keepInBound: true
+            }
+        };
+
+        var data = response.getDataTable();
+        var chart = new google.visualization.BarChart(document.getElementById('casualtyChart'));
+        chart.draw(data, google.charts.Line.convertOptions(options));
     }
 }

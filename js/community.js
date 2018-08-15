@@ -3,6 +3,7 @@ google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(drawPopChart);
 google.charts.setOnLoadCallback(drawTravelChart);
 google.charts.setOnLoadCallback(drawHouseChart);
+google.charts.setOnLoadCallback(drawSunshineChart);
 
 function drawPopChart() {
     var query = new google.visualization.Query(
@@ -64,12 +65,35 @@ function drawHouseChart() {
 
         var options = {
             title: 'House Composition',
-            vAxis: { title: 'Number' },
+            vAxis: { title: 'Number of thousands' },
             hAxis: { title: '', slantedText: true, slantedTextAngle: 45 }
         };
 
         var data = response.getDataTable();
         var chart = new google.visualization.PieChart(document.getElementById('houseChart'));
+        chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+}
+
+function drawSunshineChart() {
+    var query = new google.visualization.Query(
+        'https://docs.google.com/spreadsheets/d/1sgCImT10bC6RT87g0EO9Yckt3Eaqv0oOSpgGFBpZVjg/edit?usp=sharing');
+    query.send(handleQueryResponse);
+
+    function handleQueryResponse(response) {
+        if (response.isError()) {
+            alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+            return;
+        }
+
+        var options = {
+            title: 'Sunshine Hours',
+            vAxis: { title: '' },
+            hAxis: { title: ''}
+        };
+
+        var data = response.getDataTable();
+        var chart = new google.visualization.ColumnChart(document.getElementById('sunshineChart'));
         chart.draw(data, google.charts.Line.convertOptions(options));
     }
 }

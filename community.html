@@ -13,7 +13,7 @@
     <script src="js/libraries/leaflet-sleep.js"></script>
     <script src="/js/libraries//leaflet-heat.js"></script>
     <script src="/js/libraries//leaflet-ajax.js"></script>
-    
+
 
 </head>
 
@@ -21,17 +21,19 @@
     <div id="wrapper">
         <nav class="header">
             <h1 class="logo">
-                <a href="index.html">Community</a>
+                <a href="index.html">Glasgow Dashboard</a>
             </h1>
             <ul class="main-nav">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="health.html">Health</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="transport.html">Transport</a>
                 </li>
                 <li>
-                    <a href="#">Datasets</a>
+                    <a href="community.html">
+                        <b>Community</b>
+                    </a>
                 </li>
                 <li>
                     <a href="#">Contact</a>
@@ -40,24 +42,23 @@
         </nav>
         <div class="container">
             <div id="map" style="width: 100%; height: 45%">
-        </div>
-        <div id="content">
-            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
-                to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-                typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
-                including versions of Lorem Ipsum.</p>
+            </div>
+            <div id="content">
+                <p> Contains details of some community and general statistics regarding the City Of Glasgow. Map above shows
+                    the city boundaries along with an ability to toggle the location of rail stations within Glasgow. Charts
+                    shown below show general statistics about glasgow such as population or method of travel to work.</p>
 
-        </div>
-        <ul class="charts">
+            </div>
+            <ul class="charts">
                 <li id="popChart" class="chart" style="width: 48%; height: 400px"></li>
                 <li id="travelChart" class="chart" style="width:48%; height: 400px"></li>
                 <li id="houseChart" class="chart" style="width:48%; height: 400px"></li>
-        </ul>
-    </div>
-    <script src="js/communityMap.js"></script>
-    <script src="js/community.js"></script>
+                <li id="sunshineChart" class="chart" style="width:48%; height: 400px"></li>
+            </ul>
+            </ul>
+        </div>
+        <script src="js/communityMap.js"></script>
+        <script src="js/community.js"></script>
 </body>
 
 </html>
