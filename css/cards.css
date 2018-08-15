@@ -73,7 +73,7 @@ img {
 }
 
 .card__image--snow {
-  background-image: url("/img/glasgow\ snow.jpg");
+  background-image: url("/img/glasgow_snow.jpg");
 }
 .card__image--transport {
   background-image: url("/img/glasgow-transport.jpg");
